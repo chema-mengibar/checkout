@@ -1,0 +1,41 @@
+{
+  "name": "checkout",
+  "version": "1.0.0",
+  "description": "Checkout Prozess",
+  "main": "index.js",
+  "scripts": {
+    "build": "react-scripts build",
+    "serve:build": "serve -s build",
+    "start": "react-scripts start",
+    "start:port": "set PORT=3001 && react-scripts start"
+  },
+  "author": "chema-mengibar",
+  "license": "ISC",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.0",
+    "bootstrap": "^3.4.1",
+    "flow-bin": "^0.93.0",
+    "lodash": "^4.17.11",
+    "react": "^16.8.1",
+    "react-bootstrap": "^1.0.0-beta.8",
+    "react-cursor-position": "^3.0.3",
+    "react-dom": "^16.8.1",
+    "react-redux": "^7.0.3",
+    "react-scripts": "2.1.5",
+    "redux": "^4.0.1",
+    "serve": "^11.0.0",
+    "styled-components": "^4.1.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

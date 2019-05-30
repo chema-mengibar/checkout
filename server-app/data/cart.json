@@ -1,0 +1,19 @@
+{
+  "cartId": "234509876HIFh",
+  "products":[
+    {
+      "id": "1234567PRO",
+      "units": 2,
+      "name": "Special Product 1"
+    },
+    {
+      "id": "98765456PRO",
+      "units": 5,
+      "name": "Special Product 2"
+    }
+  ],
+  "price": "25.95",
+  "taxes": "7.25",
+  "totalPrice": "33,20",
+  "shippingCost": "0"
+}

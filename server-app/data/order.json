@@ -1,0 +1,7 @@
+{
+  "orderID":"ord-3456789098765",
+  "customerName":"Max Musterman",
+  "customerEmail":"max@ipsum.lo",
+  "customerAddress":"Loremipsumstr. 12",
+  "newsletterSubscribe": true
+}
