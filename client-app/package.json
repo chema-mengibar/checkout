@@ -12,6 +12,11 @@
   "author": "chema-mengibar",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/free-brands-svg-icons": "^5.8.2",
+    "@fortawesome/free-regular-svg-icons": "^5.8.2",
+    "@fortawesome/free-solid-svg-icons": "^5.8.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "babel-plugin-styled-components": "^1.10.0",
     "bootstrap": "^3.4.1",
     "flow-bin": "^0.93.0",
@@ -22,6 +27,7 @@
     "react-dom": "^16.8.1",
     "react-redux": "^7.0.3",
     "react-scripts": "2.1.5",
+    "react-spinners": "^0.5.4",
     "redux": "^4.0.1",
     "serve": "^11.0.0",
     "styled-components": "^4.1.3"

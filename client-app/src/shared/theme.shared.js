@@ -1,6 +1,11 @@
 const theme = {
   color: {
-    light: '255,255,255',
+    white: '255,255,255',
+    accent: '241,90,36',
+    base: '9, 55, 71',
+    base1: '33, 91, 103',
+    base2: '56, 127, 135',
+
   },
   fontFamily: {
     primary: 'Lato'
@@ -8,6 +13,9 @@ const theme = {
   fontWeigth: {
     primary: '300',
     bold: '700',
+  },
+  shape:{
+    border: '8px',
   }
 };
 
