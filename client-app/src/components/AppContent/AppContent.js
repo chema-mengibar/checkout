@@ -193,7 +193,6 @@ const AppContent = (props) => {
 
   const stepCallBack = {
     contact: ( formData ) =>{
-      console.log( formData );
       contactData = formData;
       orderData['contact'] = contactData;
       setCurrentStep('PAYMENT')

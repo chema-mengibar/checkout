@@ -50,7 +50,7 @@ const PaymentFrame = (props) => {
   const [buttonDisabled, setButtonDisabled] = useState(  true );
 
   const handler = {
-    cardnummer: (e: ChangeEvent<HTMLInputElement> ) => {
+    cardnummer: (e ) => {
       setCardnummer(e.currentTarget.value);
       isValidForm();
     }

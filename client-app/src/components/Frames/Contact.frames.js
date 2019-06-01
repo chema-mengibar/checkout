@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled, { createGlobalStyle, css } from 'styled-components';
-import theme from 'shared/theme.shared'
+import theme from '../../shared/theme.shared'
 import { Button, Form } from 'react-bootstrap';
 
 
@@ -59,29 +59,29 @@ const ContactFrame = (props) => {
   }
 
   const handler = {
-    name: (e: ChangeEvent<HTMLInputElement> ) => {
+    name: (e) => {
       setName(e.currentTarget.value);
       isValidForm();
     },
-    prename: (e: ChangeEvent<HTMLInputElement> ) => {
+    prename: (e) => {
       setPrename(e.currentTarget.value);
       isValidForm();
     },    
-    email: (e: ChangeEvent<HTMLInputElement> ) => {
+    email: (e) => {
 
       var emailInvalid = !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test( e.currentTarget.value );
       setEmail(e.currentTarget.value);
       setButtonDisabled( emailInvalid );
     },
-    address: (e: ChangeEvent<HTMLInputElement> ) => {
+    address: (e) => {
       setAddress(e.currentTarget.value);
       isValidForm();
     },
-    place: (e: ChangeEvent<HTMLInputElement> ) => {
+    place: (e) => {
       setPlace(e.currentTarget.value);
       isValidForm();
     },
-    plz: (e: ChangeEvent<HTMLInputElement> ) => {
+    plz: (e) => {
       setPlz(e.currentTarget.value);
       isValidForm();
     },
@@ -135,7 +135,7 @@ const ContactFrame = (props) => {
           </Form.Group>
        </Form>
     </FrameBox>
-    <StyledButton disabled={buttonDisabled} onClick={ ()=> { submitForm() } }>Weiter</StyledButton>
+    <StyledButton id="contact-button" disabled={buttonDisabled} onClick={ ()=> { submitForm() } }>Weiter</StyledButton>
    </Frame>
   )
 }

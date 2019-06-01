@@ -7,7 +7,7 @@ import theme from 'shared/theme.shared';
 
 const Wrapper = styled.div`
   background-color: white;
-  height:100%;
+  min-height:100%;
   width:100%;  
   display:flex;
   flex-direction:column;
