@@ -24,19 +24,19 @@ self.__precacheManifest = [
     "url": "http://motuo.info/checkout-form/static/js/runtime~main.117ad435.js"
   },
   {
-    "revision": "9f52959fd2f3de729ade",
-    "url": "http://motuo.info/checkout-form/static/js/main.9f52959f.chunk.js"
+    "revision": "fa8046b371a2295ab7ca",
+    "url": "http://motuo.info/checkout-form/static/js/main.fa8046b3.chunk.js"
   },
   {
-    "revision": "c8a21ef6832f0cafe0b1",
-    "url": "http://motuo.info/checkout-form/static/js/2.c8a21ef6.chunk.js"
+    "revision": "de1f12ebad5ae7740294",
+    "url": "http://motuo.info/checkout-form/static/js/2.de1f12eb.chunk.js"
   },
   {
-    "revision": "c8a21ef6832f0cafe0b1",
+    "revision": "de1f12ebad5ae7740294",
     "url": "http://motuo.info/checkout-form/static/css/2.475d53c0.chunk.css"
   },
   {
-    "revision": "afd5056d6a6713ed0fbc3f57b987abde",
+    "revision": "c8cc19aaf190e042e991408ba5d81b27",
     "url": "http://motuo.info/checkout-form/index.html"
   }
 ];

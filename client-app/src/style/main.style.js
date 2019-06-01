@@ -10,7 +10,6 @@ const MainCSS = createGlobalStyle`
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
     box-sizing: border-box;
     width: 100%;
@@ -20,7 +19,6 @@ const MainCSS = createGlobalStyle`
 
   body {
     line-height: 1;
-    font-family: ${ theme.fontFamily.primary};
   }
 
   form{
@@ -36,13 +34,12 @@ const MainCSS = createGlobalStyle`
     
     &--50{
       flex: 0 0 48%;
-      //margin: auto;
     }
   }
 
   .form-check{
     label{
-      color:white;
+      color: rgb(${theme.color.baseMedium}) ;
       top: -2px;
       position: relative;
       margin-left: 5px;
@@ -58,21 +55,17 @@ const MainCSS = createGlobalStyle`
     -o-transform: scale(1.2); /* Opera */
     transform: scale(1.2);
     padding: 10px;
+    margin-left:2px!important;
   }
   
   input:-internal-autofill-selected{
     background-color: rgb(${theme.color.base}) !important;
   }
 
-  .frame-title{
-    color:white;
-    font-size: 28px;
-    margin-bottom:20px;
-  }
-  
   .frame-group-title{
-    color:white;
-    font-size: 24px;
+    color:rgb(${theme.color.baseMedium});
+    font-size : 18px;
+    font-weight : ${ theme.fontWeigth.bold};
     margin:20px 0px 10px;
   }
 

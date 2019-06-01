@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import theme from 'shared/theme.shared'
 import Server from 'shared/Server';
@@ -9,19 +9,9 @@ const Frame = styled.div`
   width:auto;
   overflow:hidden;
 `
-const FrameBox = styled.div`
-  width:auto;
-  overflow:hidden;
-  background-color: rgb(${theme.color.base1});
-  border-radius : ${theme.shape.border};
-  -moz-border-radius : ${theme.shape.border};
-  -webkit-border-radius : ${theme.shape.border};
-  padding:25px;
-  margin-bottom:10px;
-`
 
 const StyledButton = styled(Button)`
-  background-color: rgb(${theme.color.accent}) !important;
+  background-color: rgb(${theme.color.ciDark}) !important;
   color: rgb(${theme.color.white});
 	font-size: 14px;
   border:none !important;
@@ -29,101 +19,162 @@ const StyledButton = styled(Button)`
   width: 145px;
   height: 40px;
   float: right;
+
+  ${ (props) => props.type && props.type === 'secondary' && css`
+    background-color: rgb(${theme.color.baseLight}) !important;
+    margin-right:15px;
+    color: rgb(${theme.color.baseDark}) !important;
+  `}
+
+  @media (max-width: 575.98px) {
+    width: 100px; 
+  }
 `;
 
 const StyledLabel = styled(Form.Label)`
-  color: rgb(${theme.color.white});
-  font-size:11px;
+  color: rgb(${theme.color.baseMedium});
+  font-size:13px;
   letter-spacing: 0.05em;
   font-weight:400;
+  i{
+    color: rgb(${theme.color.ciDark});
+    font-weight: ${theme.fontWeigth.bold};
+  }
 `;
 
 const formControlStyle ={
   backgroundColor: 'transparent',
-  color:'white'
+  color:'rgb(111, 140, 154)'
 };
 
 const PaymentFrame = (props) => {
    
   const [cardnummer, setCardnummer] = useState( "" );
+  const [date, setDate] = useState( "" );
+  const [cardName, setCardName] = useState( "" );
+  const [code, setCode] = useState( "" );
+  const [billName, setBillName] = useState( "" );
+  const [billAddress, setBillAddress] = useState( "" );
+  const [billPlace, setBillPlace] = useState( "" );
+  const [billPostalCode, setBillPostalCode] = useState( "" );
+
+  useEffect(() => {
+    isValidForm();
+  }, [cardnummer,date,cardName,code,billName,billAddress,billPlace,billPostalCode ]);
+
   const [loading, setLoading] = useState( false );
   const [buttonDisabled, setButtonDisabled] = useState(  true );
 
   const handler = {
     cardnummer: (e ) => {
       setCardnummer(e.currentTarget.value);
-      isValidForm();
+    },
+    date: (e) => {
+      setDate(e.currentTarget.value);
+    },
+    cardName: (e) => {
+      setCardName(e.currentTarget.value);
+    },
+    code: (e) => {
+      setCode(e.currentTarget.value);
+    },
+    billName: (e) => {
+      setBillName(e.currentTarget.value);
+    },
+    billAddress: (e) => {
+      setBillAddress(e.currentTarget.value);
+    },
+    billPlace: (e) => {
+      setBillPlace(e.currentTarget.value);
+    },
+    billPostalCode: (e) => {
+      setBillPostalCode(e.currentTarget.value);
     }
   };
   
+  const isEmpty = (strValue) => {
+    return (strValue === "");
+  }
+
   const isValidForm = ( ) => {
-    setButtonDisabled( false );
+    if( isEmpty(cardnummer) || isEmpty(date) || isEmpty(cardName) || isEmpty(code) ||
+        isEmpty(billName) || isEmpty(billAddress) || isEmpty(billPlace) || isEmpty(billPostalCode) )
+    {
+      setButtonDisabled( true );
+    }
+    else{
+      setButtonDisabled( false );
+    }
   }
 
   const submitForm = ( id ) => {
+
+    const formData = {
+      name: billName,
+      address: billAddress,
+      place: billPlace,
+      postalcode: billPostalCode
+    }
     setLoading(true)
     Server.checkPayment( id )
             .then( ( response ) =>{ 
               console.log(response) 
               setLoading(false);
-              props.clicked();
+              props.clicked( formData );
              } )
   };
 
   return(
    <Frame>
-    <FrameBox>
-      <div className="frame-title">Payment</div>
+    <div className="frame-group-title">Zahlungsart</div>
+    <Form>
+      <Form.Group controlId="Kartennummer">
+        <StyledLabel>Kartennummer<i>*</i></StyledLabel>
+        <Form.Control style={formControlStyle} type="text" value={cardnummer} onChange={handler.cardnummer}/>
+      </Form.Group>
+
+      <Form.Group controlId="ValidDatum">
+        <StyledLabel>Ablaufdatum<i>*</i></StyledLabel>
+        <Form.Control style={formControlStyle} type="text"  value={date} onChange={handler.date}/>
+      </Form.Group>
       
-      <div className="frame-group-title">Zahlungsart</div>
-      <Form>
-        <Form.Group controlId="Kartennummer">
-          <StyledLabel>Kartennummer</StyledLabel>
-          <Form.Control style={formControlStyle} type="text" value={cardnummer} onChange={handler.cardnummer}/>
+      <Form.Group controlId="cardName">
+        <StyledLabel>Name des Karteneinhabers<i>*</i></StyledLabel>
+        <Form.Control style={formControlStyle} type="text" value={cardName} onChange={handler.cardName} />
+      </Form.Group>
+
+      <Form.Group controlId="code" className="form-group--50">
+        <StyledLabel>Sichersheitcode<i>*</i></StyledLabel>
+        <Form.Control style={formControlStyle} type="text" value={code} onChange={handler.code} />
+      </Form.Group>
+    </Form>
+
+    <div className="frame-group-title">Rechnung</div>
+    <Form>
+      <Form.Group controlId="name">
+        <StyledLabel>Name<i>*</i></StyledLabel>
+        <Form.Control style={formControlStyle} type="text" value={billName} onChange={handler.billName}/>
+      </Form.Group>
+
+      <Form.Group controlId="strasse">
+          <StyledLabel>Straße und Hausnummer<i>*</i></StyledLabel>
+          <Form.Control style={formControlStyle} type="text" value={billAddress} onChange={handler.billAddress} />
         </Form.Group>
 
-        <Form.Group controlId="ValidDatum">
-          <StyledLabel>Ablaufdatum</StyledLabel>
-          <Form.Control style={formControlStyle} type="text" />
-        </Form.Group>
-        
-        <Form.Group controlId="cardName">
-          <StyledLabel>Name des Karteneinhabers</StyledLabel>
-          <Form.Control style={formControlStyle} type="text" />
+        <Form.Group controlId="ort" className="form-group--50">
+          <StyledLabel>Ort<i>*</i></StyledLabel>
+          <Form.Control style={formControlStyle} type="text" value={billPlace} onChange={handler.billPlace} />
         </Form.Group>
 
-        <Form.Group controlId="code" className="form-group--50">
-          <StyledLabel>Sichersheitcode</StyledLabel>
-          <Form.Control style={formControlStyle} type="text" />
+        <Form.Group controlId="plz" className="form-group--50">
+          <StyledLabel>PLZ<i>*</i></StyledLabel>
+          <Form.Control style={formControlStyle} type="text" value={billPostalCode} onChange={handler.billPostalCode} />
         </Form.Group>
-      </Form>
+    </Form>
 
-      <div className="frame-group-title">Rechnung</div>
-      <Form>
-        <Form.Group controlId="name">
-          <StyledLabel>Name</StyledLabel>
-          <Form.Control style={formControlStyle} type="text"/>
-        </Form.Group>
-
-        <Form.Group controlId="strasse">
-            <StyledLabel>Straße und Hausnummer</StyledLabel>
-            <Form.Control style={formControlStyle} type="text" />
-          </Form.Group>
-
-          <Form.Group controlId="ort" className="form-group--50">
-            <StyledLabel>Ort</StyledLabel>
-            <Form.Control style={formControlStyle} type="text" />
-          </Form.Group>
-
-          <Form.Group controlId="plz" className="form-group--50">
-            <StyledLabel>PLZ</StyledLabel>
-            <Form.Control style={formControlStyle} type="text" />
-          </Form.Group>
-      </Form>
-    </FrameBox>
     <StyledButton 
       disabled={buttonDisabled}
-      onClick={ ()=> { submitForm( 12345 );  }  }
+      onClick={ ()=> { submitForm( );  }  }
     >
       <ClipLoader
         sizeUnit={"px"}
@@ -133,6 +184,8 @@ const PaymentFrame = (props) => {
       />
       { loading == false && 'Weiter' }
     </StyledButton>
+    <StyledButton type={'secondary'} onClick={ ()=> { props.goback()  }  } > Züruck </StyledButton>
+
    </Frame>
   )
 }

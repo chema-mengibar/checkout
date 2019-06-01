@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "http://motuo.info/checkout-form/precache-manifest.81b8aba8c2de54f1040058ea9ec21d1d.js"
+  "http://motuo.info/checkout-form/precache-manifest.f6e68c47df66b038b1dae6557a423b2f.js"
 );
 
 workbox.clientsClaim();
