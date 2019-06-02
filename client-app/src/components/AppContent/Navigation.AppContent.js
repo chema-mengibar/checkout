@@ -1,17 +1,9 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import styled, { createGlobalStyle, css } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import uniqueId from 'lodash/uniqueId';
-import theme from 'shared/theme.shared'
-import Server from 'shared/Server';
-import ContactFrame from 'components/Frames/Contact.frames';
-import PaymentFrame from 'components/Frames/Payment.frames';
-import OrderFrame from 'components/Frames/Order.frames';
+import theme from '../../shared/theme.shared'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronCircleRight, faShoppingCart, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
-
-const NavigationCss = createGlobalStyle`
-  
-`;
+import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons'
 
 const NavigationContainer = styled.div`
   display:flex;
@@ -61,23 +53,20 @@ const Navigation = (props) => {
 
   return(
     <NavigationContainer>
-      <NavigationCss/>
       {
         navItems && navItems[0] &&
         navItems.map( (item) => {
           return <CheckoutNavItem 
-                      key={uniqueId('tab_')} 
-                      step={ item.step }
-                      className={ step === item.step ? 'active' : '' }
-                   >
+                    key={uniqueId('tab_')} 
+                    step={ item.step }
+                    className={ step === item.step ? 'active' : '' }
+                  >
                     <FontAwesomeIcon icon={faChevronCircleRight} />
                     <span>{ item.label }</span>
                   </CheckoutNavItem>
         })
       }
-      
     </NavigationContainer>  
   )
 }  
-
 export default Navigation

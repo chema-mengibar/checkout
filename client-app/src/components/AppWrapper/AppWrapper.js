@@ -1,6 +1,6 @@
 // @flow
 
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 import MainCSS from 'style/main.style';
 import theme from 'shared/theme.shared';

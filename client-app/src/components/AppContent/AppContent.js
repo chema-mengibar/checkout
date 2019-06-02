@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import styled, { createGlobalStyle, css } from 'styled-components';
+import styled, { css } from 'styled-components';
+import { AppContentCss } from './style.appcontent'
 import uniqueId from 'lodash/uniqueId';
 import theme from 'shared/theme.shared'
 import Server from 'shared/Server';
@@ -9,58 +10,9 @@ import OrderFrame from 'components/Frames/Order.frames';
 import { ClipLoader } from 'react-spinners';
 import Navigation from 'components/AppContent/Navigation.AppContent';
 import Product from 'components/AppContent/Product.AppContent';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
-
 import { Container, Row, Col } from 'react-bootstrap';
-
-const AppContentCss = createGlobalStyle`
-  
-  .container-override{
-    max-width:720px;
-    @media (max-width: 575.98px) {
-      padding: 10px; 
-    }
-  }
-
-  .row-override{
-    margin-left:0 !important;
-    margin-right:0 !important;
-  }
-
-  .app-content__view-title-row{
-    margin: 10px 0 20px;
-  }
-
-  p{
-    color: rgb( ${ theme.color.baseDark});
-    margin: 0 !important;
-
-    &.text--accent{
-      color: rgb( ${ theme.color.ciDark});
-      font-size:20px;
-    }
-  }
-
-  .toaster{
-    display:flex;
-    color:rgb( ${ theme.color.baseDark} );
-
-    p{
-      line-height: 45px;
-      
-      font-size:16px;
-    }
-    .fa-check-circle{
-      font-size:38px;
-      margin-right:10px;
-      path{
-        fill:green;
-     }
-    }
-  }
-`;
 
 const StyledContainer = styled.div`
   background-color:transparent;
@@ -156,9 +108,7 @@ const AppContent = (props) => {
   const [ cartInfos, setCartInfos ] = useState({}); 
   const [ products, setProducts ] = useState([]); 
 
-  const setCurrentStep = (step) => {
-    setStep( step )
-  }
+  const setCurrentStep = (step) => { setStep( step ) }
 
   useEffect(() => {
     setLoadingCart( true ); 
@@ -171,25 +121,24 @@ const AppContent = (props) => {
   }, []);
 
   const stepCallBack = {
-    contact: ( formData ) =>{
+    contact: ( formData ) => {
       contactData = formData;
       orderData['contact'] = formData;
       setCurrentStep('PAYMENT')
     },
-    payment: ( formData ) =>{
+    payment: ( formData ) => {
       orderData['payment'] = formData;
       setCurrentStep('ORDER')
     },
-    order: ( x ) =>{
+    order: () => {
       setCurrentView('DONE')
     }
   } 
 
   return(
-   <StyledContainer>
+  <StyledContainer>
     <AppContentCss />
     <Container fluid={false} className='container-override'>
-
       <Row className="app-content__view-title-row row-override">
         <Col> 
           <ViewTitle>{ views[ currentView ].label }</ViewTitle>
@@ -201,33 +150,18 @@ const AppContent = (props) => {
           <RowBox>
             <Col> 
               <RowTitle>Items {products.length}</RowTitle>
-              { loadingCart &&
-                <ClipLoader
-                  sizeUnit={"px"}
-                  size={25}
-                  loading={ loadingCart }
-                  color={'rgb(255, 128, 54)'}
-                />
-              }
+              { loadingCart && <ClipLoader sizeUnit={"px"} size={25}  loading={ loadingCart } color={'rgb(255, 128, 54)'}  /> }
               {
                 products && products[0] &&
-                products.map( ( productItem ) => {
-                    return <Product key={uniqueId('product_')}  info={ productItem }/>
-                    }
-                  )
+                products.map( ( productItem ) => { 
+                  return <Product key={uniqueId('product_')}  info={ productItem }/>  
+                })
               }
             </Col>
           </RowBox> 
           <RowBox action={'true'}>
             <RowTitle>Details</RowTitle>
-            { loadingCart &&
-                <ClipLoader
-                  sizeUnit={"px"}
-                  size={25}
-                  loading={ loadingCart }
-                  color={'rgb(255, 128, 54)'}
-                />
-            }
+            { loadingCart &&  <ClipLoader sizeUnit={"px"} size={25} loading={ loadingCart } color={'rgb(255, 128, 54)'}  />    }
             {
               cartInfos && cartInfos.cartId &&
               <Fragment>
@@ -242,7 +176,7 @@ const AppContent = (props) => {
               </Fragment>
             }
           </RowBox> 
-          <ActionRow onClick={() => setCurrentView( 'CHECKOUT' )}> Jetzt Kaufen </ActionRow>
+          <ActionRow onClick={ () => setCurrentView( 'CHECKOUT' ) }> Jetzt Kaufen </ActionRow>
         </Fragment>
       }
       {
@@ -265,7 +199,7 @@ const AppContent = (props) => {
         currentView && currentView == 'DONE' && 
         <Fragment>
           <RowBox action={'true'}>
-            <Col className="toaster"> 
+            <Col className="app-content__toaster"> 
               <FontAwesomeIcon icon={faCheckCircle} />
               <p>Vielen Dank für Ihre Bestellung.</p>
             </Col>
@@ -273,7 +207,6 @@ const AppContent = (props) => {
           <ActionRow onClick={() => setCurrentView( 'CART' )}> Zurück zum Shop </ActionRow>
         </Fragment>
       }
-      
     </Container>
    </StyledContainer>
   )

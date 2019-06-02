@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import styled, { createGlobalStyle, css } from 'styled-components';
+import styled from 'styled-components';
 import theme from 'shared/theme.shared'
 import Server from 'shared/Server';
-import { Button, Form } from 'react-bootstrap';
+import { BasicStyledButton, BasicStyledLabel } from './style.frames'
+import { Form } from 'react-bootstrap';
 import { ClipLoader } from 'react-spinners';
-
 
 const Frame = styled.div`
   width:auto;
@@ -21,32 +21,12 @@ const OrderInfo = styled.div`
   }
 `
 
-const StyledButton = styled(Button)`
-  background-color: rgb(${theme.color.ciDark}) !important;
-  color: rgb(${theme.color.white});
-	font-size: 14px;
-  border:none !important;
-	border-radius: ${theme.shape.border};
-  width: 145px;
-  height: 40px;
-  float: right;
+const StyledButton = styled(BasicStyledButton)`
 
-  ${ (props) => props.type && props.type === 'secondary' && css`
-    background-color: rgb(${theme.color.baseLight}) !important;
-    margin-right:15px;
-    color: rgb(${theme.color.baseDark}) !important;
-  `}
-
-  @media (max-width: 575.98px) {
-    width: 100px; 
-  }
 `;
 
-const StyledLabel = styled(Form.Label)`
-  color: rgb(${theme.color.baseMedium});
-  font-size:11px;
-  letter-spacing: 0.05em;
-  font-weight:400;
+const StyledLabel = styled(BasicStyledLabel)`
+
 `;
 
 const OrderFrame = (props) => {
@@ -60,7 +40,8 @@ const OrderFrame = (props) => {
   const [agbChecked, setAgbChecked] = useState( 0 );
   const [newsChecked, setNewsChecked] = useState( 0 );
 
-  const submitForm = ( ) => {
+  const submitForm = () => {
+
     setLoading(true)
 
     let orderData = {
@@ -76,10 +57,10 @@ const OrderFrame = (props) => {
     });
 
     Server.sendOrder( orderData )
-            .then( ( response ) =>{ 
-              setLoading(false);
-              props.clicked( response );
-             } )
+      .then( ( response ) =>{ 
+        setLoading(false);
+        props.clicked( response );
+      } )
   };
 
   const isValidForm = ( ) => {
@@ -89,7 +70,6 @@ const OrderFrame = (props) => {
   const handler = {
     agb: (e: ChangeEvent<HTMLInputElement> ) => {
       setAgbChecked(e.currentTarget.checked);
-      console.log( e.currentTarget.checked )
       setButtonDisabled( !e.currentTarget.checked );
     },
     news: (e: ChangeEvent<HTMLInputElement> ) => {
@@ -131,18 +111,13 @@ const OrderFrame = (props) => {
 
       <StyledButton 
         disabled={buttonDisabled}
-        onClick={ ()=> { submitForm( 12345 );  }  }
+        onClick={ ()=> { submitForm( 12345 ); } }
       >
-        <ClipLoader
-          sizeUnit={"px"}
-          size={25}
-          loading={ loading }
-          color={'#FFFFFF'}
-        />
+        <ClipLoader sizeUnit={"px"} size={25} loading={ loading }  color={'#FFFFFF'} />
         { loading == false && 'Bestellen' }
       </StyledButton>
       <StyledButton type={'secondary'} onClick={ ()=> { props.goback()  }  } > Züruck </StyledButton>
-     
+
     </Frame>
   )
 }

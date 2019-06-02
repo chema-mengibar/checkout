@@ -1,0 +1,247 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation Snapshots step CONTACT 1`] = `
+<div
+  className="NavigationAppContent__NavigationContainer-sc-1ufdwpu-0 cmbcPd"
+>
+  <div
+    className="active NavigationAppContent__CheckoutNavItem-sc-1ufdwpu-1 dpIMyc"
+    step="CONTACT"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-chevron-circle-right fa-w-16 "
+      data-icon="chevron-circle-right"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span>
+      Kontakdaten
+    </span>
+  </div>
+  <div
+    className="NavigationAppContent__CheckoutNavItem-sc-1ufdwpu-1 dpIMyc"
+    step="PAYMENT"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-chevron-circle-right fa-w-16 "
+      data-icon="chevron-circle-right"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span>
+      Bezahlinformationen
+    </span>
+  </div>
+  <div
+    className="NavigationAppContent__CheckoutNavItem-sc-1ufdwpu-1 dpIMyc"
+    step="ORDER"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-chevron-circle-right fa-w-16 "
+      data-icon="chevron-circle-right"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span>
+      Bestellabschluss
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Navigation Snapshots step ORDER 1`] = `
+<div
+  className="NavigationAppContent__NavigationContainer-sc-1ufdwpu-0 cmbcPd"
+>
+  <div
+    className="NavigationAppContent__CheckoutNavItem-sc-1ufdwpu-1 dpIMyc"
+    step="CONTACT"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-chevron-circle-right fa-w-16 "
+      data-icon="chevron-circle-right"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span>
+      Kontakdaten
+    </span>
+  </div>
+  <div
+    className="NavigationAppContent__CheckoutNavItem-sc-1ufdwpu-1 dpIMyc"
+    step="PAYMENT"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-chevron-circle-right fa-w-16 "
+      data-icon="chevron-circle-right"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span>
+      Bezahlinformationen
+    </span>
+  </div>
+  <div
+    className="active NavigationAppContent__CheckoutNavItem-sc-1ufdwpu-1 dpIMyc"
+    step="ORDER"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-chevron-circle-right fa-w-16 "
+      data-icon="chevron-circle-right"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span>
+      Bestellabschluss
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Navigation Snapshots step PAYMENT 1`] = `
+<div
+  className="NavigationAppContent__NavigationContainer-sc-1ufdwpu-0 cmbcPd"
+>
+  <div
+    className="NavigationAppContent__CheckoutNavItem-sc-1ufdwpu-1 dpIMyc"
+    step="CONTACT"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-chevron-circle-right fa-w-16 "
+      data-icon="chevron-circle-right"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span>
+      Kontakdaten
+    </span>
+  </div>
+  <div
+    className="active NavigationAppContent__CheckoutNavItem-sc-1ufdwpu-1 dpIMyc"
+    step="PAYMENT"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-chevron-circle-right fa-w-16 "
+      data-icon="chevron-circle-right"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span>
+      Bezahlinformationen
+    </span>
+  </div>
+  <div
+    className="NavigationAppContent__CheckoutNavItem-sc-1ufdwpu-1 dpIMyc"
+    step="ORDER"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-chevron-circle-right fa-w-16 "
+      data-icon="chevron-circle-right"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span>
+      Bestellabschluss
+    </span>
+  </div>
+</div>
+`;

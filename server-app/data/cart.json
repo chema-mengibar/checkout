@@ -3,13 +3,18 @@
   "products":[
     {
       "id": "1234567PRO",
-      "units": 2,
+      "extras": "Curabitur consectetur libero sit.",
       "name": "Special Product 1"
     },
     {
       "id": "98765456PRO",
-      "units": 5,
+      "extras": "Proin euismod, diam non auctor porta, enim diam ullamcorper nibh, egestas facilisis arcu orci eget nulla.",
       "name": "Special Product 2"
+    },
+    {
+      "id": "98765456PRO",
+      "extras": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "name": "Deluxe Product 3"
     }
   ],
   "price": "25.95",

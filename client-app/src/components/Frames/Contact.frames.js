@@ -1,34 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import styled, { createGlobalStyle, css } from 'styled-components';
+import styled from 'styled-components';
 import theme from '../../shared/theme.shared'
-import { Button, Form } from 'react-bootstrap';
-
+import { BasicStyledButton, BasicStyledLabel } from './style.frames'
+import { Form } from 'react-bootstrap';
 
 const Frame = styled.div`
   width:auto;
   overflow:hidden;
 `
 
-const StyledButton = styled(Button)`
-  background-color: rgb(${theme.color.accent}) !important;
-  color: rgb(${theme.color.white});
-	font-size: 14px;
-  border:none !important;
-	border-radius: ${theme.shape.border};
-  width: 145px;
-  height: 40px;
-  float: right;
+const StyledButton = styled(BasicStyledButton)`
+
 `;
 
-const StyledLabel = styled(Form.Label)`
-  color: rgb(${theme.color.baseMedium});
-  font-size:13px;
-  letter-spacing: 0.05em;
-  font-weight:400;
-  i{
-    color: rgb(${theme.color.ciDark});
-    font-weight: ${theme.fontWeigth.bold};
-  }
+const StyledLabel = styled(BasicStyledLabel)`
+
 `;
 
 const formControlStyle ={
@@ -138,7 +124,7 @@ const ContactFrame = (props) => {
         <Form.Control style={formControlStyle} type="text"  value={plz} onChange={handler.plz}/>
       </Form.Group>
     </Form>
-    <StyledButton id="contact-button" disabled={buttonDisabled} onClick={ ()=> { submitForm() } }>Weiter</StyledButton>
+    <StyledButton id="contact-button" disabled={buttonDisabled} onClick={ ()=>{ submitForm() } }>Weiter</StyledButton>
    </Frame>
   )
 }

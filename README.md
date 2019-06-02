@@ -1,28 +1,26 @@
 # Checkout Prozess
 
 - [Checkout Prozess](#checkout-prozess)
-  - [Projekt Umsetzung](#projekt-umsetzung)
-  - [Tasks](#tasks)
-  - [Kommunikationsprozess](#kommunikationsprozess)
-      - [Fragen:](#fragen)
-  - [Endpoints](#endpoints)
-      - [Fragen:](#fragen-1)
-    - [Warenkorb](#warenkorb)
-      - [Fragen:](#fragen-2)
-    - [Payment](#payment)
-    - [Order](#order)
-  - [Client-App](#client-app)
-    - [Layout](#layout)
-    - [Form Elements](#form-elements)
-      - [Kontakdaten](#kontakdaten)
-      - [Bezahlinformationen](#bezahlinformationen)
-      - [Bestellabschluss](#bestellabschluss)
-      - [Auftragsbestätigung](#auftragsbest%C3%A4tigung)
-    - [Entwicklung](#entwicklung)
-      - [Installation](#installation)
-      - [Usage](#usage)
-
-
+	- [Projekt Umsetzung](#projekt-umsetzung)
+	- [Tasks](#tasks)
+	- [Kommunikationsprozess](#kommunikationsprozess)
+	- [Endpoints](#endpoints)
+		- [Warenkorb](#warenkorb)
+		- [Payment](#payment)
+		- [Order](#order)
+	- [Client-App](#client-app)
+		- [Layout](#layout)
+		- [Komponenten](#komponenten)
+		- [Form Elements, Felder](#form-elements-felder)
+			- [Kontakdaten](#kontakdaten)
+			- [Bezahlinformationen](#bezahlinformationen)
+			- [Bestellabschluss](#bestellabschluss)
+			- [Auftragsbestätigung](#auftragsbestätigung)
+		- [Libraries](#libraries)
+		- [Entwicklung](#entwicklung)
+			- [Installation](#installation)
+			- [Usage](#usage)
+			- [Test](#test)
 
 ## Projekt Umsetzung
 <img src="./readme.img/workflow.jpg" width="100%">
@@ -49,8 +47,7 @@
 ### Warenkorb
 **Path:** /checkout/?cart={cartId}   
 GET  
-**! Example:** http://motuo.info/checkout/?cart=12  
-**Example:** http://motuo.info/checkout/cart/12  
+**! Example:** http://motuo.info/checkout/?type=cart&cart=12  
 **Success Response**:
 ```
 {
@@ -83,8 +80,7 @@ GET
 ### Payment
 **Path:** /checkout/?payment={customerId}  
 GET  
-**! Example:** http://motuo.info/checkout/?payment=987654   
-**Example:** http://motuo.info/checkout/payment/987654   
+**! Example:** http://motuo.info/checkout/?type=payment&payment=154    
 **Success Response**:
 ```
 {
@@ -94,14 +90,13 @@ GET
 ```
 
 ### Order
-**Path:** /checkout/?order={orderId}  
+**Path:** /checkout  
 POST  
-**! Example:** http://motuo.info/checkout/?order=12  
-**Example:** http://motuo.info/checkout/order  
+**! Example:** http://motuo.info/checkout   
 **Body**:
 ```
 {
-  "cartID":"234509876HIFh",
+  "cartId":"234509876HIFh",
   "...":""
 }
 ```
@@ -120,34 +115,46 @@ POST
 ## Client-App
 
 ### Layout
-<img src="./readme.img/client-app/dribbble_01.png" width="49%">
-<img src="./readme.img/client-app/dribbble_02.png" width="49%">
+<img src="./readme.img/client-app/dribbble_01.png" width="33%">
+<img src="./readme.img/client-app/dribbble_02.png" width="30%">
+<img src="./readme.img/client-app/dribbble_03.png" width="33%">
 
-<img src="./readme.img/client-app/checkout_kontakt-daten.png" width="98.5%">
+<img src="./readme.img/client-app/checkout_screens.png" width="100%">
 
-### Form Elements
-- Required Optional Elementen
-- Validierung
+### Komponenten
+<img src="./readme.img/client-app/komponenten.jpg" width="100%">
+
+### Form Elements, Felder
+>Required Optional Elementen  
+ Validierung
 
 #### Kontakdaten
 - Titel, Anrede, Vorname, Name
 - Email, Tlf,
 - Straße, Hausnummer, PLZ, Ort, Land
 - Gast?
+- Buttons (Weiter)
 
 #### Bezahlinformationen
 - Gutscheincode?
 - Kartennummer
 - Ablaufdatum: Monat, Jahr, Sichersheitcode
 - Name des Karteneinhabers
-- Rechnungadresse, Hausnummer, ...
+- Rechnungadresse, Hausnummer, ...  
+- Buttons (Weiter, Zurück)
 
 #### Bestellabschluss
 - Zusammenfassung
-- Checkboxes:  AGBs(required) und Newsletter(optional)
+- Checkboxes:  AGBs(required) und Newsletter(optional)  
+- Buttons (Weiter, Zurück)
 
 #### Auftragsbestätigung
 - Text, Infos, Links, Navigation
+
+### Libraries
+- **Css:**  bootstrap, react-bootstrap, styled-components
+- **Icons:**  fortawesome, react-spinners
+- **Test:**  jest, react-test-rendere
 
 ---
 ### Entwicklung
@@ -167,3 +174,9 @@ npm run start:port
 ```
 npm run build
 ```
+
+#### Test
+```
+npm run test
+```
+<img src="./readme.img/Jest-PowerShell.jpg" width="100%">

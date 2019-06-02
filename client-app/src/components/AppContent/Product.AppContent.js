@@ -2,14 +2,10 @@ import React, { Fragment, useState, useEffect } from 'react';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import theme from 'shared/theme.shared'
 
-const ProductCss = createGlobalStyle`
-  
-`;
-
 const ProductContainer = styled.div`
-  display:flex
+  display:flex;
   flex-direction:row;
-  margin-top: 10px;
+  margin-top:10px;
 
   &:not(:last-child):after {
     border-bottom: 1px solid rgb( ${theme.color.baseLight} );
@@ -30,15 +26,15 @@ const ProductContainer = styled.div`
   }
 
   .product__name{
-    font-size : 18px;
+    font-size:18px;
     margin-bottom:5px;
-    color:  rgb( ${theme.color.ciDark} );
+    color: rgb( ${theme.color.ciDark} );
   }
 
   .product__extras{
-    color:  rgb( ${theme.color.baseMedium} );
+    color: rgb( ${theme.color.baseMedium} );
   }
-`
+`;
 
 const Product = (props) => {
 
@@ -46,7 +42,6 @@ const Product = (props) => {
 
   return(
     <ProductContainer>
-      <ProductCss/>
       <div className="product__left">
         <div className="product__img"></div>
       </div>
@@ -57,5 +52,4 @@ const Product = (props) => {
     </ProductContainer>  
   )
 }  
-
 export default Product
