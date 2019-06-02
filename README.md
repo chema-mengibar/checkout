@@ -26,7 +26,9 @@
 <img src="./readme.img/workflow.jpg" width="100%">
 
 ## Tasks
-**Trello:** https://trello.com/b/TwMh9gqu/checkout
+**Trello:** https://trello.com/b/TwMh9gqu/checkout  
+
+<img src="./readme.img/tasks-trello.jpg" width="180px">
 
 ## Kommunikationsprozess
 <img src="./readme.img/kommunikation-prozess.jpg" width="80%">
@@ -116,10 +118,10 @@ POST
 
 ### Layout
 
-*source: https://dribbble.com/*  
 <img src="./readme.img/client-app/dribbble_01.png" width="33%">
 <img src="./readme.img/client-app/dribbble_02.png" width="30%">
 <img src="./readme.img/client-app/dribbble_03.png" width="33%">
+*source: https://dribbble.com/* 
 
 #### Entwurf
 <img src="./readme.img/client-app/checkout_screens.png" width="100%">
