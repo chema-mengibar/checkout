@@ -79,14 +79,14 @@ const OrderFrame = (props) => {
 
   return(
     <Frame>
-      <span className="frame-group-title">Kontaktsdaten</span>
+      <div className="frame-group-title">Kontaktsdaten</div>
       <OrderInfo>
         { odC && <span>{odC.prename + ' ' + odC.name }</span>}
         { odC && <span>{odC.email }</span>}
         { odC && <span>{odC.address + ', ' + odC.plz + ' - ' + odC.place  }</span>}
       </OrderInfo>
 
-      <span className="frame-group-title">Rechnungsdaten</span>
+      <div className="frame-group-title">Rechnungsdaten</div>
       <OrderInfo>
         { odP && <span>{odP.name }</span>}
         { odP && <span>{odP.address }</span>}
