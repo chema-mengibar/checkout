@@ -4,17 +4,20 @@
     {
       "id": "1234567PRO",
       "extras": "Curabitur consectetur libero sit.",
-      "name": "Special Product 1"
+      "name": "Special Product 1",
+      "image": "http://motuo.info/checkout/data/product_01.png"
     },
     {
       "id": "98765456PRO",
       "extras": "Proin euismod, diam non auctor porta, enim diam ullamcorper nibh, egestas facilisis arcu orci eget nulla.",
-      "name": "Special Product 2"
+      "name": "Special Product 2",
+      "image": "http://motuo.info/checkout/data/product_02.png"
     },
     {
       "id": "98765456PRO",
       "extras": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "name": "Deluxe Product 3"
+      "name": "Deluxe Product 3",
+      "image": "http://motuo.info/checkout/data/product_03.png"
     }
   ],
   "price": "25.95",

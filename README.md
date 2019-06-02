@@ -115,10 +115,13 @@ POST
 ## Client-App
 
 ### Layout
+
+*source: https://dribbble.com/*  
 <img src="./readme.img/client-app/dribbble_01.png" width="33%">
 <img src="./readme.img/client-app/dribbble_02.png" width="30%">
 <img src="./readme.img/client-app/dribbble_03.png" width="33%">
 
+#### Entwurf
 <img src="./readme.img/client-app/checkout_screens.png" width="100%">
 
 ### Komponenten
@@ -170,7 +173,7 @@ npm i
 npm run start:port
 ```
 
-**Distribution**
+**Build**
 ```
 npm run build
 ```
@@ -179,4 +182,29 @@ npm run build
 ```
 npm run test
 ```
-<img src="./readme.img/Jest-PowerShell.jpg" width="100%">
+
+**Snapshots, Unit-Tests**  
+> **Navigation.AppContent.test.js**  
+<a href="https://github.com/chema-mengibar/checkout/blob/master/client-app/src/components/AppContent/Navigation.AppContent.test.js" target="_blank"> View code in Github</a>
+
+> **Contact.frames.test.js**  
+<a href="https://github.com/chema-mengibar/checkout/blob/master/client-app/src/components/Frames/Contact.frames.test.js" target="_blank"> View code in Github</a>
+>
+
+<img src="./readme.img/Jest-PowerShell.jpg" width="80%">
+
+### ♥ Recherche
+
+##### Forms
+https://reactjs.org/docs/forms.html  
+https://react-bootstrap.github.io/components/input-group/  
+https://react-bootstrap.github.io/components/forms/  
+
+##### Test React
+https://reactjs.org/docs/test-renderer.html  
+
+##### CSS, Icons
+https://www.styled-components.com/docs/api  
+https://react-bootstrap.github.io/  
+https://fontawesome.com/icons/  
+https://fontawesome.com/cheatsheet

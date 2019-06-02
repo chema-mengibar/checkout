@@ -154,7 +154,7 @@ const AppContent = (props) => {
               {
                 products && products[0] &&
                 products.map( ( productItem ) => { 
-                  return <Product key={uniqueId('product_')}  info={ productItem }/>  
+                  return <Product key={ uniqueId('product_') } info={ productItem }/>  
                 })
               }
             </Col>

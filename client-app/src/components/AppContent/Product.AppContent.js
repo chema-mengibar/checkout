@@ -22,7 +22,13 @@ const ProductContainer = styled.div`
   .product__img{
     width:100px;
     height:100px;
-    background-color: rgb( ${theme.color.baseLight} );
+    box-sizing: border-box;
+    border: 1px solid rgba( ${theme.color.baseMedium}, .1 );
+    text-align:center;
+
+    img{
+      width:95%;
+    }
   }
 
   .product__name{
@@ -43,7 +49,9 @@ const Product = (props) => {
   return(
     <ProductContainer>
       <div className="product__left">
-        <div className="product__img"></div>
+        <div className="product__img">
+          <img src={ infos.image } />
+        </div>
       </div>
       <div className="product__right"> 
         <div className="product__name"> { infos.name } </div>
